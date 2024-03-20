@@ -48,7 +48,7 @@ Future<Uint8List> getPdf({required Size size}) async {
                         pw.Spacer(),
                         pw.Text(
                             'Name\t\t\t : ${Globals.globals.firstName} ${Globals.globals.lastName}',
-                            style: pw.TextStyle(fontSize: 18)),
+                            style: const pw.TextStyle(fontSize: 18)),
                         pw.Text(
                             'Date\t\t\t : ${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}'),
                         pw.Text('Bill No : ${Globals.globals.billNumber}'),
@@ -119,7 +119,7 @@ Future<Uint8List> getPdf({required Size size}) async {
                           pw.SizedBox(height: 10),
                           ...Globals.nameController.map(
                             (e) => pw.Text(
-                              e.toString(),
+                              e.text,
                               style: const pw.TextStyle(fontSize: 16),
                             ),
                           ),
@@ -146,7 +146,7 @@ Future<Uint8List> getPdf({required Size size}) async {
                           pw.SizedBox(height: 10),
                           ...Globals.quentyController.map(
                             (e) => pw.Text(
-                              '$e',
+                              e.text,
                               style: const pw.TextStyle(fontSize: 16),
                             ),
                           ),
@@ -165,14 +165,15 @@ Future<Uint8List> getPdf({required Size size}) async {
                       ),
                       child: pw.Column(
                         children: [
-                          pw.Text('Val',
-                              style: pw.TextStyle(
-                                  fontWeight: pw.FontWeight.bold,
-                                  fontSize: 20)),
+                          pw.Text(
+                            'Val',
+                            style: pw.TextStyle(
+                                fontWeight: pw.FontWeight.bold, fontSize: 20),
+                          ),
                           pw.SizedBox(height: 10),
                           ...Globals.priceController.map(
                             (e) => pw.Text(
-                              '$e ₹',
+                              Globals.priceController.isNotEmpty ? e.text : "0",
                               style: const pw.TextStyle(fontSize: 16),
                             ),
                           ),
@@ -200,8 +201,23 @@ Future<Uint8List> getPdf({required Size size}) async {
                           pw.SizedBox(height: 10),
                           ...Globals.priceController.map(
                             (e) => pw.Text(
-                              'total ₹',
-                              style: const pw.TextStyle(fontSize: 16),
+                              (
+                                      //-------------------------------
+                                      e.text.isNotEmpty
+                                          ? int.parse(e.text) *
+                                              int.parse(Globals
+                                                  .quentyController[Globals
+                                                      .priceController
+                                                      .indexOf(e)]
+                                                  .text)
+                                          : "0"
+                                  //--------------------------------
+                                  )
+                                  .toString(),
+                              style: const pw.TextStyle(
+                                fontSize: 16,
+                              ),
+                              maxLines: 1,
                             ),
                           ),
                         ],
@@ -226,11 +242,10 @@ Future<Uint8List> getPdf({required Size size}) async {
                       'Total',
                       style: const pw.TextStyle(fontSize: 20),
                     ),
-                    // pw.SizedBox(width: 10),
                     pw.Spacer(),
                     pw.Text(
-                      'Cost is ₹',
-                      style: const pw.TextStyle(fontSize: 20),
+                      '${Globals.totalValue} Rs.',
+                      style: const pw.TextStyle(fontSize: 18),
                     ),
                     pw.SizedBox(width: 10),
                   ],
@@ -258,13 +273,13 @@ Future<Uint8List> getPdf({required Size size}) async {
                       height: 10,
                     ),
                     pw.Text(
-                      "- Contact: Jayesh Bhai Chitroda \t:\t 9909262233",
+                      "- Contact: Jayesh bhai Chitroda \t:\t 9909262233",
                       style: const pw.TextStyle(
                         fontSize: 13,
                       ),
                     ),
                     pw.Text(
-                      "- Contact: Arvind bhai Chauhan \t:\t 9909262233",
+                      "- Contact: Arvind bhai Chauhan \t:\t 9825184912",
                       style: const pw.TextStyle(
                         fontSize: 13,
                       ),
@@ -285,7 +300,7 @@ Future<Uint8List> getPdf({required Size size}) async {
 class _PdfPageState extends State<PdfPage> {
   @override
   void initState() {
-    Globals.globals.Sum();
+    Globals.globals.calculateTotalValue();
     log("sum : ${Globals.totalValue}");
     super.initState();
   }

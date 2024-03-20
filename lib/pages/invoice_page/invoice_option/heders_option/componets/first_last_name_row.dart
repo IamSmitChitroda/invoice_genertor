@@ -51,7 +51,7 @@ Widget firstLastNameRow() {
                 return null;
               }
             },
-            initialValue: Globals.globals.firstName,
+            initialValue: Globals.globals.lastName,
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.person),
