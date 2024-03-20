@@ -1,14 +1,16 @@
+import 'dart:developer';
+
 import 'headers.dart';
 
 class Globals {
-  String? firstName, lastName, phone, address, billNumber;
+  String? firstName, lastName, billNumber;
 
   Globals._();
 
   static final Globals globals = Globals._();
 
   void reset() {
-    firstName = lastName = phone = address = billNumber = null;
+    firstName = lastName = billNumber = null;
   }
 
   static List<TextEditingController> nameController = [
@@ -23,4 +25,13 @@ class Globals {
     TextEditingController(),
     TextEditingController(),
   ];
+  static int totalValue = 0;
+  void Sum() {
+    priceController.forEach(
+      (element) {
+        totalValue = int.parse(element.text) +
+            int.parse(quentyController[priceController.indexOf(element)].text);
+      },
+    );
+  }
 }

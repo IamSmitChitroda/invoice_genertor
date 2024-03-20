@@ -81,8 +81,14 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                               ),
                               Expanded(
                                 child: TextField(
-                                  decoration:
-                                      const InputDecoration(hintText: "Price"),
+                                  decoration: const InputDecoration(
+                                    hintText: "Price",
+                                    prefixIcon: Icon(Icons.currency_rupee),
+                                  ),
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly
+                                  ],
+                                  keyboardType: TextInputType.number,
                                   controller: Globals.priceController[index],
                                 ),
                               ),
@@ -92,7 +98,12 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                               Expanded(
                                 child: TextField(
                                   decoration: const InputDecoration(
-                                      hintText: "Quantity"),
+                                    hintText: "Quantity",
+                                  ),
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly
+                                  ],
+                                  keyboardType: TextInputType.number,
                                   controller: Globals.quentyController[index],
                                 ),
                               ),

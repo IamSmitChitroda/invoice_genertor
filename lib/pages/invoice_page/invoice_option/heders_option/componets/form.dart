@@ -26,10 +26,6 @@ Widget formWidget({
                 firstLastNameRow(),
                 // Bill Number
                 billNumber(),
-                // Phone number
-                phoneNumberRow(),
-                // Address
-                addressRow(formKey: formKey),
                 const SizedBox(
                   height: 20,
                 ),
