@@ -11,7 +11,15 @@ class Globals {
     firstName = lastName = phone = address = billNumber = null;
   }
 
-  static List<TextEditingController> controller = [
+  static List<TextEditingController> nameController = [
+    TextEditingController(),
+    TextEditingController(),
+  ];
+  static List<TextEditingController> priceController = [
+    TextEditingController(),
+    TextEditingController(),
+  ];
+  static List<TextEditingController> quentyController = [
     TextEditingController(),
     TextEditingController(),
   ];

@@ -13,19 +13,19 @@ class ProductOptionPage extends StatefulWidget {
 class _ProductOptionPageState extends State<ProductOptionPage> {
   @override
   void initState() {
-    if (Globals.controller.length > 2) {
-      Globals.controller.removeWhere((element) => element.text.isEmpty);
+    if (Globals.nameController.length > 2) {
+      Globals.nameController.removeWhere((element) => element.text.isEmpty);
     }
-    if (Globals.controller.isEmpty || Globals.controller.length < 2) {
+    if (Globals.nameController.isEmpty || Globals.nameController.length < 2) {
       log("RELOADING....................");
       // Globals.skill = [
       //   '',
       //   '',
       // ];
-      if (Globals.controller.length == 1) {
-        Globals.controller.add(TextEditingController());
+      if (Globals.nameController.length == 1) {
+        Globals.nameController.add(TextEditingController());
       } else {
-        Globals.controller.addAll([
+        Globals.nameController.addAll([
           TextEditingController(),
           TextEditingController(),
         ]);
@@ -66,14 +66,14 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                           style: TextStyle(fontSize: 20),
                         ),
                         ...List.generate(
-                          Globals.controller.length,
+                          Globals.nameController.length,
                           (index) => Row(
                             children: [
                               Expanded(
                                 child: TextField(
                                   decoration:
                                       const InputDecoration(hintText: "Name"),
-                                  // controller: Globals.controller[index],
+                                  controller: Globals.nameController[index],
                                 ),
                               ),
                               SizedBox(
@@ -83,7 +83,7 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                                 child: TextField(
                                   decoration:
                                       const InputDecoration(hintText: "Price"),
-                                  // controller: Globals.controller[index],
+                                  controller: Globals.priceController[index],
                                 ),
                               ),
                               SizedBox(
@@ -93,7 +93,7 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                                 child: TextField(
                                   decoration: const InputDecoration(
                                       hintText: "Quantity"),
-                                  // controller: Globals.controller[index],
+                                  controller: Globals.quentyController[index],
                                 ),
                               ),
                               SizedBox(
@@ -102,7 +102,7 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                               // DetectButton ======================================================================
                               IconButton(
                                 onPressed: () {
-                                  Globals.controller.removeAt(index);
+                                  Globals.nameController.removeAt(index);
                                   setState(() {});
                                 },
                                 icon: const Icon(Icons.delete),
@@ -113,7 +113,7 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                         const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
-                            Globals.controller.add(TextEditingController());
+                            Globals.nameController.add(TextEditingController());
                             setState(() {});
                           },
                           child: const Text('Add'),

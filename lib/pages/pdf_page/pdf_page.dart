@@ -3,9 +3,6 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
-import '../utills/headers.dart';
-import '../utills/headers.dart';
-
 class PdfPage extends StatefulWidget {
   const PdfPage({super.key});
 
@@ -16,9 +13,8 @@ class PdfPage extends StatefulWidget {
 pw.TextStyle nameStyle =
     pw.TextStyle(fontSize: 52, fontWeight: pw.FontWeight.bold);
 
-Future<ByteData> byteData = rootBundle.load("lib/assets/logo.png");
-
 Future<Uint8List> getPdf({required Size size}) async {
+  ByteData byteData = await rootBundle.load("lib/assets/logo.png");
   //----------------------------------------------------------------
   pw.Document pdf = pw.Document();
   //---------------------------------------------------------------
@@ -58,8 +54,9 @@ Future<Uint8List> getPdf({required Size size}) async {
                 ),
                 //LastName ----------------------------------------
                 pw.Text(
-                    " ${Globals.globals.lastName.toString().replaceFirst(Globals.globals.lastName.toString()[0], Globals.globals.lastName.toString()[0].toUpperCase())}",
-                    style: nameStyle),
+                  " ${Globals.globals.lastName.toString().replaceFirst(Globals.globals.lastName.toString()[0], Globals.globals.lastName.toString()[0].toUpperCase())}",
+                  style: nameStyle,
+                ),
               ],
             ),
           )
