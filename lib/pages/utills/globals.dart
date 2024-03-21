@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'headers.dart';
 
 class Globals {
@@ -26,12 +24,13 @@ class Globals {
     TextEditingController(),
   ];
   static int totalValue = 0;
-  void Sum() {
-    priceController.forEach(
-      (element) {
-        totalValue = int.parse(element.text) +
-            int.parse(quentyController[priceController.indexOf(element)].text);
-      },
-    );
+  void calculateTotalValue() {
+    for (var element in priceController) {
+      totalValue += int.parse(element.text.isNotEmpty ? element.text : "0") *
+          int.parse(
+              quentyController[priceController.indexOf(element)].text.isNotEmpty
+                  ? quentyController[priceController.indexOf(element)].text
+                  : "0");
+    }
   }
 }

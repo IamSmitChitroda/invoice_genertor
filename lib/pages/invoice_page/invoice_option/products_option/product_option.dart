@@ -125,6 +125,10 @@ class _ProductOptionPageState extends State<ProductOptionPage> {
                         ElevatedButton(
                           onPressed: () {
                             Globals.nameController.add(TextEditingController());
+                            Globals.quentyController
+                                .add(TextEditingController());
+                            Globals.priceController
+                                .add(TextEditingController());
                             setState(() {});
                           },
                           child: const Text('Add'),

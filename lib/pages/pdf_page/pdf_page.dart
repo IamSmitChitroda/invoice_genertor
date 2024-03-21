@@ -244,7 +244,7 @@ Future<Uint8List> getPdf({required Size size}) async {
                     ),
                     pw.Spacer(),
                     pw.Text(
-                      '${Globals.totalValue} Rs.',
+                      '${Globals.totalValue ?? "0"} Rs.',
                       style: const pw.TextStyle(fontSize: 18),
                     ),
                     pw.SizedBox(width: 10),
@@ -301,7 +301,6 @@ class _PdfPageState extends State<PdfPage> {
   @override
   void initState() {
     Globals.globals.calculateTotalValue();
-    log("sum : ${Globals.totalValue}");
     super.initState();
   }
 
