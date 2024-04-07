@@ -81,12 +81,6 @@ Once you have completed your project and uploaded it to your GitHub repository, 
 
 <br>
 
-### Video:
-
-https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/4645bf63-58e7-46fa-9288-01e9b52ef208
-
-<br>
-
 ### Screenshots:
 
 <p>
@@ -114,7 +108,7 @@ https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/4645bf63-58
 
 <p>
    
-   <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/c77b8b0c-e822-4375-a102-d4374aa04821" width=22% height=35% >
+   <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/ed17e080-6047-4830-9930-6c3d9b36289b" width=22% height=35% >
   
   <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/7564dc29-b5ab-4511-9bb3-d8d5a8d77eb5" width=22% height=35% >
   
