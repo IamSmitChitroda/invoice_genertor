@@ -14,3 +14,4 @@ export 'package:invoice_genertor/pages/invoice_page/invoice_option/heders_option
 export 'package:invoice_genertor/pages/utills/globals.dart';
 export 'package:invoice_genertor/pages/invoice_page/invoice_option/heders_option/componets/form.dart';
 export 'package:invoice_genertor/pages/invoice_page/invoice_option/heders_option/componets/bill_number_row.dart';
+export 'package:printing/printing.dart';
