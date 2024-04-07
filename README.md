@@ -113,9 +113,10 @@ https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/4645bf63-58
 </p>
 
 <p>
-  <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/7564dc29-b5ab-4511-9bb3-d8d5a8d77eb5" width=22% height=35% >
+   
+   <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/c77b8b0c-e822-4375-a102-d4374aa04821" width=22% height=35% >
   
-  <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/c77b8b0c-e822-4375-a102-d4374aa04821" width=22% height=35% >
+  <img align = "left"  src = "https://github.com/IamSmitChitroda/invoice_genertor/assets/143987366/7564dc29-b5ab-4511-9bb3-d8d5a8d77eb5" width=22% height=35% >
   
 </p>
 
